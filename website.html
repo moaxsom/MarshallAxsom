@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Marshall Axsom | Piano Portfolio</title>
+  <!-- Google Fonts: modern, clean sans-serif + elegant serif for contrast -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;   /* pure white background */
+      color: var(--emerald);             /* deep black text */
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* emerald green accent color — modern, deep, vibrant */
+    :root {
+      --emerald: #012a4a;
+      --emerald-light: #014f86;
+      --emerald-glow: #2c7da0;
+      --emerald-soft: #ddd1bb;
+    }
+
+    /* modern container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* navigation - minimal, black on white, emerald hover */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid #eaeef2;
+      margin-top: -1px; /* tiny overlap fix if needed */
+      flex-wrap: wrap;
+      
+    }
+    .container-nav{
+      background-color: #141313;
+    }
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: #ddd1bb;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .logo span {
+      color: var(--emerald-glow);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #ddd1bb;
+      transition: color 0.25s ease;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--emerald-light);
+    }
+
+    /* buttons & accents */
+    .btn-outline-emerald {
+      background: transparent;
+      border: 2px solid var(--emerald-glow);
+      padding: 0.6rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #ddd1bb;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-outline-emerald:hover {
+      background: var(--emerald-light);
+      color: #ddd1bb;
+      border-color: var(--emerald);
+    }
+
+    .btn-solid-emerald {
+      background: var(--emerald-glow);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--emerald-soft);
+      transition: background 0.2s ease;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-solid-emerald:hover {
+      background: var(--emerald);
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url("/Users/toriewhite/Documents/Marshalls Website/Dramatic_Shot.JPEG");
+      height: 100vh; /* full screen height */
+      width: 100%;
+      margin-top: -1px; /* tiny overlap fix if needed */
+
+  
+    background-size: cover;       /* makes image fill screen */
+    background-position: center;  /* keeps it centered */
+    background-repeat: no-repeat;
+  
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   padding: 4rem 0 5rem 0;
+   gap: 2rem;
+    }
+    .hi{
+      color:var(--emerald-soft);
+    }
+   
+    .hero-content {
+      flex: 1.2;
+   
+    }
+   
+    .hero-content .badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 500;
+      color: var(--emerald);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .hero-content h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+     
+      color: var(--emerald-soft);
+  /* offset-x | offset-y | blur-radius | color */
+      text-shadow: 2px 2px 4px #000000;
+      max-width: 90%;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--emerald);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #555;
+    }
+
+    .hero-media {
+      flex: 1;
+      background: #f9fbfa;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: grayscale(10%) contrast(102%);
+      transition: filter 0.3s;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+
+    .section-subtitle {
+      color: #4a4a4a;
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      border-left: 4px solid var(--emerald);
+      padding-left: 1rem;
+    }
+
+    /* performances grid (modern cards) */
+    .performances-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 2rem;
+    }
+
+    .performance-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      border: 1px solid #eceef2;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .performance-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--emerald-light);
+      box-shadow: 0 20px 30px -12px rgba(15, 110, 74, 0.12);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #eef2f0;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-meta {
+      display: flex;
+      gap: 1rem;
+      color: var(--emerald);
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-meta i {
+      margin-right: 0.3rem;
+    }
+
+    .card-content p {
+      color: #2d2d2d;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Audio / recordings section */
+    .recordings {
+      background-color: #ffffff;
+      border-radius: 28px;
+      padding: 2rem 0;
+    }
+
+    .audio-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .track {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background: #fbfdfc;
+      border-radius: 60px;
+      border: 1px solid #e6ece9;
+      transition: all 0.2s;
+    }
+
+    .track:hover {
+      border-color: var(--emerald);
+      background: #ffffff;
+    }
+
+    .track-info {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .track-icon {
+      color: var(--emerald);
+      font-size: 1.6rem;
+    }
+
+    .track-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .track-composer {
+      font-size: 0.8rem;
+      color: #5a5a5a;
+    }
+
+    .play-btn {
+      background: none;
+      border: 1.5px solid var(--emerald);
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      background: white;
+    }
+
+    .play-btn:hover {
+      background: var(--emerald);
+      color: white;
+    }
+
+    /* about section minimalistic */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+      margin: 3rem 0;
+      padding: 2rem 0;
+    }
+
+    .about-text {
+      flex: 1.5;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      color: #1e1e1e;
+    }
+
+    .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--emerald);
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    .about-img {
+      flex: 1;
+      background: #f4f7f5;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* contact section */
+    .contact {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 2rem 0 3rem;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contact-info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.2rem 0;
+    }
+
+    .contact-detail i {
+      width: 2rem;
+      color: var(--emerald);
+      font-size: 1.3rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.8rem;
+    }
+
+    .social-links a {
+      color: #000;
+      background: #f2f5f3;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      transition: all 0.2s;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background: var(--emerald);
+      color: white;
+    }
+
+    .contact-form {
+      flex: 1;
+      background: #fefefe;
+      border-radius: 32px;
+      padding: 1.8rem;
+      border: 1px solid #eef2ef;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid #e0e6e2;
+      border-radius: 24px;
+      font-family: 'Inter', sans-serif;
+      background: white;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 2px var(--emerald-glow);
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      border-top: 1px solid #eceff2;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6f6f6f;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+        color: #ffffff;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 1.8rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .track {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        border-radius: 28px;
+      }
+    }
+
+    /* custom audio playing simulation (dummy) */
+    .playing {
+      background: var(--emerald-soft);
+      border-color: var(--emerald);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-nav">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#">Marshall<span>Axsom</span></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#work">Performances</a></li>
+      <li><a href="#recordings">Recordings</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div>
+      <button class="btn-outline-emerald" id="bookNowBtn">Book concert →</button>
+    </div>
+  </nav>
+</div>
+  <!-- Hero section -->
+  <div class="hero">
+    <div class="container">
+    <div class="hero-content">
+     
+      <h1 class="hi">Hi I'm Marshall<br>Axsom</h1>
+      <p class="hip">Pianist, Accompanist, Organist, Teacher,<br> Composer, and Arranger</p>
+      <div class="hero-stats">
+    
+      </div>
+      <div style="margin-top: 2rem;">
+        <button class="btn-solid-emerald" id="listenCta"><i class="fas fa-headphones"></i> Listen to latest</button>
+      </div>
+    </div>
+    <!-- <div class="hero-media">
+      <img src="/Users/toriewhite/Documents/Marshalls Website/Piano_Lid.JPG" alt="Piano performance">
+    </div> -->
+  </div>
+</div>
+
+  <!-- Featured Performances (modern cards) -->
+  <div class="container">
+  <section id="work">
+    <div style="margin: 2rem 0 1rem 0;">
+      <h2 class="section-title">Featured performances</h2>
+      <div class="section-subtitle">Recent concerts & recitals </div>
+    </div>
+    <div class="performances-grid">
+      <div class="performance-card">
+        <img class="card-img" src="/Users/toriewhite/Documents/Marshalls Website/marsh.JPG" alt="Senior Recital">
+        <div class="card-content">
+          <h3>Senior Recital</h3>
+          <div class="card-meta"><i class="fas fa-calendar-alt"></i>April 13, 2026 · <i class="fas fa-map-marker-alt"></i> Commerce TX</div>
+          <p>Works by Bach, Beethoven, Barber, and Rachmaninoff</p>
+        </div>
+      </div>
+      <div class="performance-card">
+        <img class="card-img" src="/Users/toriewhite/Documents/Marshalls Website/Hands.JPG" alt="Wigmore Hall">
+        <div class="card-content">
+          <h3>Chamber Recital</h3>
+          <div class="card-meta"><i class="fas fa-calendar-alt"></i> April 30th, 2025 · <i class="fas fa-map-marker-alt"></i> Commerce TX</div>
+          <p>Works by Mozart, Taktakishvili, Schubert, and Debussy
+          </p>
+        </div>
+      </div>
+      <div class="performance-card">
+        <img class="card-img" src="/Users/toriewhite/Documents/Marshalls Website/Head_Rest.JPG" alt="Philharmonie Paris">
+        <div class="card-content">
+          <h3>Junior Recital</h3>
+          <div class="card-meta"><i class="fas fa-calendar-alt"></i> April 14, 2025 · <i class="fas fa-map-marker-alt"></i> Commerce TX</div>
+          <p>Works by Mozart, Liszt, Rameau, and Debussy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+  <!-- Recordings / audio player (simulated) -->
+  <div class="container">
+  <section id="recordings" class="recordings">
+    <h2 class="section-title">Studio recordings</h2>
+   
+    <div class="audio-grid">
+      <div class="track" id="track1">
+        <div class="track-info">
+          <i class="fas fa-music track-icon"></i>
+          <div><span class="track-title">Bach Allemande</span><br><span class="track-composer">J.S. Bach.  French Suite No. 5 in G Major, BWV 816: Allemande</span></div>
+        </div>
+        <button class="play-btn" data-track="chopin"><i class="fas fa-play"></i> Play excerpt</button>
+      </div>
+      <div class="track" id="track2">
+        <div class="track-info">
+          <i class="fas fa-music track-icon"></i>
+          <div><span class="track-title">Barber Excursions</span><br><span class="track-composer">Samuel Barber. Excursions, Op. 20: Allegretto</span></div>
+        </div>
+        <button class="play-btn" data-track="debussy"><i class="fas fa-play"></i> Play excerpt</button>
+      </div>
+      <div class="track" id="track3">
+        <div class="track-info">
+          <i class="fas fa-music track-icon"></i>
+          <div><span class="track-title">Ludwig van Beethoven</span><br><span class="track-composer"> Ludwig van Beethoven.  Sonata in F-Sharp Major, Op. 78:  Allegro vivace</span></div>
+        </div>
+        <button class="play-btn" data-track="beethoven"><i class="fas fa-play"></i> Play excerpt</button>
+      </div>
+    </div>
+ 
+  </section>
+  </div>
+  <!-- About Section -->
+  <div class="container">
+  <section id="about">
+    <div class="about">
+      <div class="about-text">
+        <h2 class="section-title">Marshall Axsom</h2>
+        <p>Marshall holds a Bachelor of Music in Piano Performance, having dedicated his academic and artistic career to the pursuit of excellence as both a musician and pianist. Through rigorous preparation and performance of solo and chamber recitals, regular accompanying for church choirs, and formal study of the organ, he has cultivated exceptional technical command and deep musical sensitivity. His teaching experience spans private and group settings, and he takes profound satisfaction in guiding students at every level to uncover and develop their unique musical voices.</p>
+        <p>Marshall does not limit his contributions only to performance and teaching but is also dedicated to promoting the overall music community. He has participated in MTNA National Conferences and had the honor of being President of his collegiate MTNA Chapter, which has helped him develop leadership skills and strengthened his passion and commitment towards music education. </p>
+      
+      </div>
+      <div class="about-img">
+        <img src="/Users/toriewhite/Documents/Marshalls Website/Piano_Lid.JPG" alt="Marshall's portrait">
+      </div>
+    </div>
+  </section>
+  </div>
+  <!-- Contact Section -->
+  <div class="container">
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Let’s create<br>music together</h3>
+        <p>For booking inquiries, masterclasses or collaborations.</p>
+        <div class="contact-detail"><i class="fas fa-envelope"></i> <span>axsompiano@gmail.com</span></div>
+        <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+1317 703 4151</span></div>
+        <div class="contact-detail"><i class="fas fa-map-pin"></i> <span>Indianapolis, IN</span></div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/axsom_piano"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@AxsomPiano"><i class="fab fa-youtube"></i></a>
+
+        </div>
+      </div>
+      <div class="contact-form">
+        <form id="demoForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email address" required>
+          </div>
+          <div class="form-group">
+            <textarea rows="3" placeholder="Message / Event inquiry"></textarea>
+          </div>
+          <button type="submit" class="btn-solid-emerald" style="width:100%; justify-content:center;">Send inquiry <i class="fas fa-arrow-right"></i></button>
+        </form>
+        <p style="font-size:0.7rem; margin-top:1rem; text-align:center; color:#9aa89f;">We'll get back within 48 hours</p>
+      </div>
+    </div>
+  </section>
+ 
+  <footer>
+    <p>© 2026 Marshall Axsom — Piano Portfolio. All rights reserved. <span style="color: var(--emerald);">✦ Emerald Edition</span></p>
+  </footer>
+</div>
+
+
+<script>
+
+    const playButtons = document.querySelectorAll('.play-btn');
+    const listenCta = document.getElementById('listenCta');
+    const bookBtn = document.getElementById('bookNowBtn');
+  
+    // 🎵 REAL AUDIO PLAYER
+    const audioPlayer = new Audio();
+  
+    const tracks = {
+      chopin: "/Users/toriewhite/Documents/Marshalls Website/Bach_Allemande.m4a",
+      debussy: "/Users/toriewhite/Documents/Marshalls Website/Barber_Excursions_Allegretto.m4a",
+      beethoven: "/Users/toriewhite/Documents/Marshalls Website/Beethoven_Mvmt_2.m4a"
+    };
+  
+    let currentTrack = null;
+  
+    function simulatePlay(trackName, trackId) {
+      // 🎵 PLAY REAL AUDIO
+      if (trackId && tracks[trackId]) {
+        if (currentTrack === trackId && !audioPlayer.paused) {
+          audioPlayer.pause();
+          currentTrack = null;
+        } else {
+          audioPlayer.src = tracks[trackId];
+          audioPlayer.play();
+          currentTrack = trackId;
+        }
+      }
+  
+      // UI toast (UNCHANGED)
+      const notif = document.createElement('div');
+      notif.innerText = `🎵 Now playing: ${trackName}`;
+      notif.style.position = 'fixed';
+      notif.style.bottom = '20px';
+      notif.style.left = '20px';
+      notif.style.backgroundColor = '#014f86';
+      notif.style.color = 'white';
+      notif.style.padding = '10px 20px';
+      notif.style.borderRadius = '40px';
+      notif.style.fontSize = '0.85rem';
+      notif.style.fontWeight = '500';
+      notif.style.zIndex = '999';
+      notif.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+      notif.style.fontFamily = 'Inter, sans-serif';
+      document.body.appendChild(notif);
+  
+      setTimeout(() => {
+        notif.style.opacity = '0';
+        setTimeout(() => notif.remove(), 800);
+      }, 2000);
+  
+      // highlight track (UNCHANGED)
+      const parentTrack = document
+        .querySelector(`.play-btn[data-track="${trackId}"]`)
+        ?.closest('.track');
+  
+      if (parentTrack) {
+        parentTrack.classList.add('playing');
+        setTimeout(() => parentTrack.classList.remove('playing'), 600);
+      }
+    }
+  
+    playButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+  
+        let trackId = btn.getAttribute('data-track') || 'classical';
+        let trackNice = '';
+  
+        if (trackId === 'chopin') trackNice = 'J.S. Bach.  French Suite No. 5 in G Major, BWV 816: Allemande';
+        else if (trackId === 'debussy') trackNice = 'Barber Excursion Allegretto';
+        else if (trackId === 'beethoven') trackNice = 'Ludwig van Beethoven.  Sonata in F-Sharp Major, Op. 78:  Allegro vivace';
+        else trackNice = 'Piano excerpt';
+  
+        simulatePlay(trackNice, trackId);
+      });
+    });
+  
+    listenCta.addEventListener('click', () => {
+      simulatePlay('J.S. Bach.  French Suite No. 5 in G Major, BWV 816: Allemande"', 'chopin');
+    });
+  
+    bookBtn.addEventListener('click', () => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  
+      const formMessage = document.createElement('div');
+      formMessage.innerText = '✨ Scroll down to booking form ✨';
+      formMessage.style.position = 'fixed';
+      formMessage.style.bottom = '80px';
+      formMessage.style.right = '20px';
+      formMessage.style.backgroundColor = '##014f86';
+      formMessage.style.color = 'white';
+      formMessage.style.padding = '8px 18px';
+      formMessage.style.borderRadius = '30px';
+      formMessage.style.fontSize = '0.8rem';
+      document.body.appendChild(formMessage);
+  
+      setTimeout(() => formMessage.remove(), 2000);
+    });
+  
+    // smooth scroll (UNCHANGED)
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetElem = document.querySelector(targetId);
+          if(targetElem) targetElem.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  
+    // form (UNCHANGED)
+    const form = document.getElementById('demoForm');
+    if(form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('📩 Thank you! Your inquiry has been sent (demo). I will reach out soon — with emerald warmth.');
+        form.reset();
+      });
+    }
+  
+    // footer year (UNCHANGED)
+    const footerYear = document.querySelector('footer p');
+    if(footerYear) footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
+  </script>
+
+</body>
+</html>
